@@ -29,6 +29,7 @@ function addIcon(i) {
       oTurn = true;
    }
 
+   cell[i].style.fontSize = "4em";
    cell[i].style.pointerEvents = "none";
 
    checkForWinner();

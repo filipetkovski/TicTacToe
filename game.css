@@ -2,6 +2,11 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     user-select: none;
+    background-color: dodgerblue;
+    color: white;
+}
+* {
+    -webkit-tap-highlight-color: transparent;
 }
 p {
     margin: 0;
@@ -10,7 +15,6 @@ p {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    height: 100vh;
 }
 .heading-div {
     padding: 20px;
@@ -31,10 +35,10 @@ p {
 }
 .cell {
     height: 100px;
-    border: 1px solid black;
+    border: 3px solid white;
     cursor: pointer;
     transition: 0.5s;
-    font-size: 4em;
+    font-size: 0em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,9 +66,10 @@ p {
     justify-content: center;
 }
 .restart-div button {
-    background-color: black;
-    color: white;
-    border: 1px solid black;
+    font-size: 1.2em;
+    background-color: white;
+    color: dodgerblue;
+    border: 1px solid white;
     padding: 5px 15px;
     text-align: center;
     border-radius: 5px;
@@ -85,14 +90,13 @@ p {
     display: none
 }
 span {
-    color: red;
+    color: pink;
 }
 @media (hover: hover) {
     .restart-div button:hover {
         background-color: transparent;
-        color: black;
+        color: white;
     }
-
     .cell:hover {
         background-color: #efefef;
         color: #676767;
