@@ -100,13 +100,12 @@ p {
     display: none
 }
 span {
-    color: pink;
+    color: red;
 }
 
 .red-line-1 {
     position: absolute;
     width: 100%;
-    height: 2px;
     background-color: red;
     transform: rotate(35deg);
     transition: 0.2s;
