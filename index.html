@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial.scale=1.0">
+
+    <title>Tic Tac Toe</title>
+
+    <link rel="stylesheet" href="game.css">
+
+    <script src="game.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="heading-div">
+            <p>Tic-Tac-Toe</p>
+            <p>by Filip Petkovski</p>
+        </div>
+
+        <div class="cells-div">
+            <div onclick="addIcon(0)" class="cell cell0"></div>
+            <div onclick="addIcon(1)" class="cell cell1"></div>
+            <div onclick="addIcon(2)" class="cell cell2"></div>
+            <div onclick="addIcon(3)" class="cell cell3"></div>
+            <div onclick="addIcon(4)" class="cell cell4"></div>
+            <div onclick="addIcon(5)" class="cell cell5"></div>
+            <div onclick="addIcon(6)" class="cell cell6"></div>
+            <div onclick="addIcon(7)" class="cell cell7"></div>
+            <div onclick="addIcon(8)" class="cell cell8"></div>
+        </div>
+
+        <div class="stats-div">
+            <div class="stats winner-div">
+                <p class="result"><span class="win"></span> wins!</p>
+            </div>
+            <div class="stats draw-div">
+                <p class="result">DRAW!</p>
+            </div>
+        </div>
+
+        <div class="restart-div">
+            <button onclick="window.location.reload();">Restart</button>
+        </div>
+    </div>
+</body>
+</html>
