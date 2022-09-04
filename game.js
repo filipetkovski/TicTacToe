@@ -64,6 +64,7 @@ function stopGame() {
    const cellsDiv = document.querySelector(".cells-div");
 
    cellsDiv.style.pointerEvents = "none";
+   cellsDiv.classList.add("animation");
 }
 
 //View
@@ -72,6 +73,7 @@ function winner(n) {
 
    const winnerDiv = document.querySelector(".winner-div");
    const winSpan = document.querySelector(".win");
+   winnerDiv.classList.add("animation");
 
    if(n === 1) {
       winSpan.innerHTML = xType;
@@ -83,7 +85,9 @@ function winner(n) {
    xCell = [];
 }
 function draw() {
+   stopGame();
    const drawDiv = document.querySelector(".draw-div");
 
+   drawDiv.classList.add("animation");
    drawDiv.style.display = "unset";
 }
