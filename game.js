@@ -4,6 +4,8 @@ const oType = "O";
 let xCell = [];
 let oCell = [];
 let oTurn = false;
+let xoArray = [];
+
 const winningCombination = [
     [0,1,2],
     [3,4,5],
@@ -40,18 +42,24 @@ function checkForWinner() {
       for(let i=0;i<8;i++) {
          w = 0;
          l = 0;
+         xoArray = [];
          for(let j=0;j<3;j++) {
             for(let k=0;k<9;k++) {
                if(winningCombination[i][j] === xCell[k]) {
                   w++;
+                  xoArray.push(k);
                   if(w >= 3) {
-                     winner(1);
+                     winner(1,i);
                   }
                } else if(winningCombination[i][j] === oCell[k]) {
                   l++;
+                  xoArray.push(k);
                   if(l >= 3) {
-                     winner(2);
+                     winner(2,i);
                   }
+               }
+               if(xoArray.length > 3) {
+                   xoArray = [];
                }
             }
          }
@@ -68,8 +76,9 @@ function stopGame() {
 }
 
 //View
-function winner(n) {
+function winner(n,i) {
    stopGame();
+    winnerAnimation(i);
 
    const winnerDiv = document.querySelector(".winner-div");
    const winSpan = document.querySelector(".win");
@@ -90,4 +99,24 @@ function draw() {
 
    drawDiv.classList.add("animation");
    drawDiv.style.display = "unset";
+}
+function winnerAnimation(i) {
+
+    const cell = document.querySelectorAll(".cell");
+
+    for(let j=0;j<3;j++) {
+        const div = document.createElement("div");
+
+        if(i >= 0 && i < 3) {
+            div.classList.add("red-line-3");
+        } else if(i >= 3 && i < 6) {
+            div.classList.add("red-line-4");
+        } else if(i === 6 ) {
+            div.classList.add("red-line-1");
+        } else if(i === 7 ) {
+            div.classList.add("red-line-2");
+        }
+
+        cell[winningCombination[i][j]].appendChild(div);
+    }
 }
